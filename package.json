@@ -1,0 +1,33 @@
+{
+  "name": "master-asp-printer",
+  "description": "Node.js printer bindings",
+  "version": "1.0.0",
+  "private": false,
+  "author": "MasterAsp",  
+  "license": "Property of MasterASP SL",
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "scripts": {
+    "install": "prebuild-install || node-gyp rebuild",
+    "prebuild": "prebuild --all --force --strip --verbose",
+    "rebuild": "node-gyp rebuild",
+    "test": "nodeunit test"
+  },
+  "binary": {
+    "module_name": "node_printer",
+    "module_path": "./lib/",
+    "host": "",
+    "remote_path": ""
+  },
+  "main": "./lib/printer",
+  "dependencies": {
+    "nan": "2.22.0",
+    "prebuild-install": "7.1.2"
+  },
+  "devDependencies": {
+    "nodeunit": "*",
+    "prebuild": "^13.0.1",
+    "prebuild-ci": "4.0.0"
+  }
+}
